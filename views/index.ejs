@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Web - Users</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Data Users</h1>
+            <a href="/users/add">Tambah User</a>
+            <ul>
+                <% users.forEach(user=> { %>
+                    <li>
+                        <%= user.name %> - <%= user.email %>
+                                <div>
+                                    <a href="/users/edit/<%= user.id %>">Edit</a> |
+                                    <a href="/users/delete/<%= user.id %>">Delete</a>
+                                </div>
+                    </li>
+                    <% }) %>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
